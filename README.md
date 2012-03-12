@@ -8,6 +8,9 @@ Side scrolling, search with highlighted results, preview and thumbnails, text ex
 
 For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
+### Retina Display ready for the new iPad
+FastPdfKit is fully compatible with the new iPad, checkout the [**devel**](https://github.com/mobfarm/FastPdfKit/tree/devel) branch and the at least the 3.3 update.
+
 ![Interface iPad](http://reader.fastpdfkit.com/readme/interface1s.png)
 ![Search iPad](http://reader.fastpdfkit.com/readme/search1s.png)
 
