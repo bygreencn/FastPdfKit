@@ -1,5 +1,7 @@
 # FastPdfKit
 
+----
+
 This repository contains the FastPdfKit iOS library with some sample projects.
  
 FastPdfKit is a library that let you show pdf documents in iOS applications bypassing all performances and missing features problems related to QuickLook.
@@ -301,6 +303,45 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 
 ## Changelog
+
+### Update 3.4.2 (June 28, 2012)
+* Fix for password protected documents not working anymore
+
+### Update 3.4.1 (June 2, 2012)
+
+* Removed some warnings;
+* Updated Extensions;
+* Fixed episodical crashes.
+
+### Update 3.4 (May 17, 2012)
+
+* Added a new pdf engine. It is enabled by default. You can switch back to the old version by untick the appropriate option in the *Settings* (this will be available until the final release). Feedback on performances is welcomed.
+
+The new version will attempt to cache pdf page images. If no `documentId` is set in the `MFDocumentViewController`, the default folders are in *Library/Caches/shared*, otherwise the cache is located in *Library/Caches/<documentId>*.
+
+Default settings should provide good performance on all devices, from the first iPad to the new one.
+Thumbnails generation has been moved inside the lib. Customization options for the thumbnail scroll view will be available in the final version.
+
+* Fixed occasional crash with dual core devices on startup
+
+### Update 3.3.3 (March 23, 2012)
+* New rendering approach just for the new iPad (and its weak A5X CPU)
+* Page thumbnails created for Retina Display on the new iPad
+* Core Library built with Xcode 4.2 and iOS 5.0 to avoid poor performances caused by a (reintroduced) CATiledLayer.
+
+### Update 3.3.2 (March 14, 2012)
+* Alternate uri definition for modal annotations
+
+### Update 3.3.1 (March 13, 2012)
+* Added a supportedOrientation attribute to allow change of supported orientation at runtime
+* Added alternate schemes (prefixes) for annotations' uri
+
+### Update 3.3 (March 8, 2012)
+* Improved support for the new retina iPad
+* Fixed (contained) a crash occurring when the pdf provokes a transform stack buffer underflow
+
+### Update 3.2.4 (January 30, 2012)
+* Changed font cache again. This should avoid a few cases of creshes due to an NULL font name;
 
 ### Update 3.2.3 (January 24th, Tuesday, 2012)
 * Removed a few debugging logs

@@ -104,10 +104,15 @@ int nextOffset(int offset) {
         
     } else {
         
-        // Thumbnail rendering here.
+        CGFloat scale = 1.0;
         
-
-        CGImageRef image = [document createImageForThumbnailOfPageNumber:pageNr ofSize:thumbnailSize andScale:1.0];
+        // Check if it's a Retina Display
+        if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+            scale = [[UIScreen mainScreen] scale];
+        }
+        
+        // Thumbnail rendering here.
+        CGImageRef image = [document createImageForThumbnailOfPageNumber:pageNr ofSize:thumbnailSize andScale:scale];
         UIImage * img = [[UIImage alloc]initWithCGImage:image];
         NSData * data = UIImagePNGRepresentation(img);
         
@@ -126,6 +131,7 @@ int nextOffset(int offset) {
 -(void)handleThumbDone:(UIImage *)image {
     
     NSUInteger page;
+    
     
     TVThumbnailView * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
     
